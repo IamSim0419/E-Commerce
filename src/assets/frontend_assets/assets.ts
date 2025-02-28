@@ -94,7 +94,7 @@ type Assets = {
   cross_icon: string;
 };
 
-type Product = {
+export type Product = {
   _id: string;
   name: string;
   description: string;
@@ -102,7 +102,7 @@ type Product = {
   image: string[];
   category: string;
   subCategory: string;
-  sizes: string[];
+  sizes?: string[];
   date: number;
   bestseller: boolean;
 };

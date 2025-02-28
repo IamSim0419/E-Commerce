@@ -8,12 +8,12 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
 export default function App() {
   return (
     <main className="px-4 sm:px-[5wv] md:px-[7vw] lg:px-[9vw]">
-      <Navbar />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
