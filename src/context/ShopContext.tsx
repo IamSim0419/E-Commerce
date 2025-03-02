@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
-import { Product } from "../assets/frontend_assets/assets"; // Type definition for Product
 import { products } from "../assets/frontend_assets/assets";
+import { Product } from "../types/types"; // Type definition for Product
 
 export type ShopContextType = {
   products: Product[];

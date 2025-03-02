@@ -28,7 +28,9 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center py-5 font-medium">
       {/* Logo */}
-      <img className="w-36" src={assets.logo} alt="" />
+      <Link to={"/"}>
+        <img className="w-36" src={assets.logo} alt="" />
+      </Link>
 
       {/* Laptop Navigation Links */}
       <nav className="hidden sm:flex gap-5 text-sm text-gray-700">
