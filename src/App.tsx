@@ -9,11 +9,14 @@ import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import SearchBar from "./components/SearchBar";
 
 export default function App() {
   return (
     <main className="px-4 sm:px-[5wv] md:px-[7vw] lg:px-[9vw]">
       <Header />
+      <SearchBar />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,6 +29,8 @@ export default function App() {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/order" element={<Orders />} />
       </Routes>
+
+      <Footer />
     </main>
   );
 }

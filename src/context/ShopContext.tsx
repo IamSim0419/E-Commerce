@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { products } from "../assets/frontend_assets/assets";
 import { Product } from "../types/types"; // Type definition for Product
 
@@ -6,6 +6,10 @@ export type ShopContextType = {
   products: Product[];
   currency: string;
   deliver_fee: number;
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  showSearch: boolean;
+  setShowSearch: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 // Value object the values of the context and undefined by default
@@ -19,6 +23,8 @@ export default function ShopContextProvider({
 }: {
   children: React.ReactNode;
 }) {
+  const [search, setSearch] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
   const currency = "$";
   const deliver_fee = 10;
 
@@ -27,6 +33,10 @@ export default function ShopContextProvider({
     products,
     currency,
     deliver_fee,
+    search,
+    setSearch,
+    showSearch,
+    setShowSearch,
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

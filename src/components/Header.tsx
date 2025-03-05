@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/frontend_assets/assets";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
+import { useShop } from "../context/ShopContext";
 
 export const navLinks = [
   {
@@ -24,6 +25,7 @@ export const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { setShowSearch } = useShop();
 
   return (
     <header className="flex justify-between items-center py-5 font-medium">
@@ -32,7 +34,7 @@ export default function Header() {
         <img className="w-36" src={assets.logo} alt="" />
       </Link>
 
-      {/* Laptop Navigation Links */}
+      {/* Navigation Links */}
       <nav className="hidden sm:flex gap-5 text-sm text-gray-700">
         {navLinks.map((link) => (
           <NavLink
@@ -49,6 +51,7 @@ export default function Header() {
       {/* Search, Profile(Dropdown-menu) and Cart Icons */}
       <div className="flex items-center gap-6">
         <img
+          onClick={() => setShowSearch(true)}
           src={assets.search_icon}
           alt="Search Icon"
           className="w-5 cursor-pointer"
